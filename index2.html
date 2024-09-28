@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* Basic layout for Header and Content */
+header {
+    background-color: #4A90E2;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.content {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Default layout for mobile (small screens) */
+@media (max-width: 600px) {
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "content"
+            "sign-up"
+            "feature1"
+            "feature2"
+            "feature3";
+    }
+
+    .main-content {
+        grid-area: content;
+        background-color: #EDEDED;
+        padding: 20px;
+    }
+
+    .sign-up {
+        grid-area: sign-up;
+        background-color: #F5A623;
+        padding: 20px;
+    }
+
+    .feature1, .feature2, .feature3 {
+        background-color: #F8E71C;
+        padding: 20px;
+    }
+
+    .feature1 {
+        grid-area: feature1;
+    }
+
+    .feature2 {
+        grid-area: feature2;
+    }
+
+    .feature3 {
+        grid-area: feature3;
+    }
+}
+
+/* Layout for tablet (medium screens) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "content content"
+            "sign-up feature1"
+            "feature2 feature3";
+    }
+
+    .main-content {
+        grid-area: content;
+        background-color: #EDEDED;
+        padding: 20px;
+    }
+
+    .sign-up {
+        grid-area: sign-up;
+        background-color: #F5A623;
+        padding: 20px;
+    }
+
+    .feature1 {
+        grid-area: feature1;
+        background-color: #F8E71C;
+        padding: 20px;
+    }
+
+    .feature2 {
+        grid-area: feature2;
+        background-color: #B8E986;
+        padding: 20px;
+    }
+
+    .feature3 {
+        grid-area: feature3;
+        background-color: #7ED321;
+        padding: 20px;
+    }
+}
+
+/* Layout for desktop (large screens) */
+@media (min-width: 901px) {
+    .content {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "feature1 feature2 feature3"
+            "sign-up sign-up sign-up"
+            "content content content";
+    }
+
+    .main-content {
+        grid-area: content;
+        background-color: #EDEDED;
+        padding: 20px;
+    }
+
+    .sign-up {
+        grid-area: sign-up;
+        background-color: #F5A623;
+        padding: 20px;
+    }
+
+    .feature1 {
+        grid-area: feature1;
+        background-color: #F8E71C;
+        padding: 20px;
+    }
+
+    .feature2 {
+        grid-area: feature2;
+        background-color: #B8E986;
+        padding: 20px;
+    }
+
+    .feature3 {
+        grid-area: feature3;
+        background-color: #7ED321;
+        padding: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <section class="content">
+        <div class="main-content">
+            <h2>Content</h2>
+        </div>
+
+        <div class="sign-up">
+            <h2>Sign Up</h2>
+        </div>
+
+        <div class="feature feature1">
+            <h2>Feature 1</h2>
+        </div>
+
+        <div class="feature feature2">
+            <h2>Feature 2</h2>
+        </div>
+
+        <div class="feature feature3">
+            <h2>Feature 3</h2>
+        </div>
+    </section>
+
+</body>
+</html>
